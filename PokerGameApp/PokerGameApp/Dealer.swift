@@ -18,4 +18,7 @@ class Dealer : Player {
     func draw() -> Card?{
         return self.cardDeck.removeOne()
     }
+    func playAble(with players : Int) -> Bool {
+        return cardDeckCount - players >= 0
+    }
 }
