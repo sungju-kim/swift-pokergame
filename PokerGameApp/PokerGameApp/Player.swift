@@ -23,5 +23,8 @@ class Player {
     func receive(_ card : Card) {
         self.hand.add(card: card)
     }
+    func showHand() -> Cards {
+        return self.hand
+    }
     
 }

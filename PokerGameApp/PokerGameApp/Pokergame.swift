@@ -26,8 +26,12 @@ struct PokerGame {
     mutating func play() {
         draw()
     }
+    func showPlayers() -> Players {
+        return self.players
+    }
     
     private func draw() {
+        dealer.shuffle()
         stud.loop(with: self.playerCount){ playerIndex in
             guard let drawedCard = dealer.draw() else {return}
             players.eachReceive(card: drawedCard, index: playerIndex)
@@ -35,12 +39,15 @@ struct PokerGame {
     }
     
     private func seatPlayer() {
-        self.players.seat(player: dealer)
         var playerName = PlayerName()
         playerCount.loop(){_ in
-            let name = playerName.popName()
-            let newPlayer = Player(name: name)
-            self.players.seat(player: newPlayer)
+            if players.count == 0 {
+                self.players.seat(player: dealer)
+            }else {
+                let name = playerName.popName()
+                let newPlayer = Player(name: name)
+                self.players.seat(player: newPlayer)                
+            }
         }
     }
     
