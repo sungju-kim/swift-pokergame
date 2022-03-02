@@ -27,5 +27,22 @@ class Players {
     func eachReceive(card: Card, index : Int) {
         players[index].receive(card)
     }
+    func showPlayers() {
+        for player in players {
+        }
+    }
     
+}
+
+extension Players: Collection {
+    typealias Index = Int
+    var startIndex: Int {return 0}
+    var endIndex: Int { return players.count - 1}
+    func index(after i: Int) -> Int {
+        return i + 1
+    }
+    subscript(i: Index) -> Player {
+        return players[endIndex-i]
+    }
+
 }

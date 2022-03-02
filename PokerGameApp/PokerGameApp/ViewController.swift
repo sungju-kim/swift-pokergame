@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var pokerGame = PokerGame(stud: .sevenCard, playerCount: .four)
     override func viewDidLoad() {
         super.viewDidLoad()
         if let backGround = UIImage(named: "bg_pattern.png"){
             self.view.backgroundColor = UIColor(patternImage: backGround)
         }
-        createHand(numberOfCard: 7)
+        
+        pokerGame.play()
+        showWholeCards()
     }
     func createHand(numberOfCard: Int){
         let screenSize = UIScreen.main.bounds
@@ -31,6 +34,20 @@ class ViewController: UIViewController {
             imageView.image = cardBackSide
             self.view.addSubview(imageView)
         }
+    }
+    
+    func showWholeCards() {
+        let players = pokerGame.showPlayers()
+        let playersViewFactory = PlayersViewFactory(players: players)
+        let playersView = playersViewFactory.showPlayersView()
+        playersView.translatesAutoresizingMaskIntoConstraints = false
+        let safeArea = view.safeAreaLayoutGuide
+        self.view.addSubview(playersView)
+        
+        playersView.heightAnchor.constraint(equalTo: safeArea.heightAnchor, multiplier: 0.7).isActive = true
+        playersView.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.8).isActive = true
+        playersView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30).isActive = true
+        playersView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -30).isActive  = true
     }
 }
 

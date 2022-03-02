@@ -67,7 +67,7 @@ struct PokerGame {
         case fiveCard = 5
 
         func loop(with playerCount : PlayerCount, event: @escaping (Int)->Void) {
-            (0..<rawValue).forEach{_ in playerCount.loop(){event($0)}}
+            (0...rawValue).forEach{_ in playerCount.loop(){event($0)}}
         }
     }
 }

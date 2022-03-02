@@ -9,10 +9,14 @@ import Foundation
 import UIKit
 
 class Player {
-    private var name : String
+    private let name : String
     private var hand : Cards
     var handCount : Int {
         return hand.count
+    }
+    
+    var yourName : String {
+        return name
     }
     
     init(name: String) {
@@ -23,6 +27,7 @@ class Player {
     func receive(_ card : Card) {
         self.hand.add(card: card)
     }
+    
     func showHand() -> Cards {
         return self.hand
     }

@@ -12,10 +12,10 @@ struct Card : Equatable {
         var description: String {
             return rawValue
         }
-        case heart = "❤️"
-        case spade = "♠️"
-        case clover = "♣️"
-        case diamond = "♦️"
+        case heart = "h"
+        case spade = "s"
+        case clover = "c"
+        case diamond = "d"
     }
     
     enum Number : String, CustomStringConvertible, CaseIterable {
