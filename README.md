@@ -20,11 +20,6 @@
 
 
 
-## 실행화면
-
-<img src="https://user-images.githubusercontent.com/78553659/154931428-3223f936-3a79-43f4-b04d-189e4633b601.png" width="213" height="400"/>
-
-
 
 # 2. 카드 클래스 구현하기
 
@@ -58,6 +53,12 @@
 4. 카드를 나눠주기전 게임을 진행할 수 있는지 없는지 판단 구현
 5. [Card] → Cards 로 표현할 수 있도록 Cards 구조체 구현
 6. 클로저를 전달하여 enum의 rawValue에 접근하지 않아도 그값을 이용할수 있는 로직 구현
+
+
+# 1 실행화면
+
+<img src="https://user-images.githubusercontent.com/78553659/168547938-94b14478-0971-4972-8fa1-8b69a97151fa.png" width="213" height="400"/>
+
 
 
 
