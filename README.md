@@ -50,6 +50,16 @@
 6. 카드를 초기화 상태로 돌리기위해 reset 메소드 구현
    1. originDeck 을 선언하여 초기에 카드덱 생성시 생성된 카드덱을 저장하고 reset시 이를 가져오도록 구현
 
+# 4. OOP관점 리팩토링
+## 과정
+1. CardDeck 구조체 class → struct 변경
+2. internal 변수 private으로 변경
+3. getCard → receiveCard 함수명 변경
+4. 카드를 나눠주기전 게임을 진행할 수 있는지 없는지 판단 구현
+5. [Card] → Cards 로 표현할 수 있도록 Cards 구조체 구현
+6. 클로저를 전달하여 enum의 rawValue에 접근하지 않아도 그값을 이용할수 있는 로직 구현
+
+
 
 
 
